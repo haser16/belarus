@@ -1,0 +1,200 @@
+{% load static %}
+
+body {
+
+    margin: 0 auto;
+    font-family: "Montserrat", "sans-serif";
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.header {
+    border-radius: 20px;
+    padding-top: 30px;
+    width: 100%;
+    height: 95vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-size: cover;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);;
+}
+
+/* *,
+*:before,
+*:after {
+    box-sizing: border-box;
+} */
+
+.container__haser {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__links {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 19px;
+    cursor: pointer;
+    transition: color .2s linear;
+    color: #fff;
+    position: relative;
+}
+
+.nav__links:hover {
+    color: #60648a
+}
+.header__video {
+    background-color: #f8b358;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 30vh auto 30px;
+}
+
+.video__treangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 20px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.medicine{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.section__title{
+    color: lightblue;
+    font-weight: 700;
+    padding-top: 10px;
+    font-size: 20px;
+}
+.section__description{
+    margin-top: 1%;
+}
+.section__description__text{
+    color:azure;
+    font-size: 100%;
+}
+.section__description__name{ 
+    color:azure;
+}
+.section__data{
+    display: block;
+    margin-top: 10%;
+    color: #c2f2ff;
+}
+.industry{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.building{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.building__description__text__color{
+    font-size: 120%;
+}
+.carbuilding{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.agriculture{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.forestry{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.it{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.culture{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.architecture{
+    border-radius: 20px;
+    margin-top: 1px;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden;
+}
+.footer{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.footer__img{
+    width: 5rem;
+}
+
+
