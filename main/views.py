@@ -1,125 +1,73 @@
-from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
+from common.views import ModelMixin, PathMixin, TitleMixin
 from main.models import (IT, Agriculture, Architecture, CarBuilding,
                          Construction, Culture, Forestry, Industry, Medicine)
 
 
-class IndexTemplateView(TemplateView):
+class IndexTemplateView(TitleMixin, TemplateView):
     template_name = 'main/index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(IndexTemplateView, self).get_context_data()
-
-        context['title'] = 'Современная Беларусь'
-
-        return context
+    title = 'Беларусь Современная'
 
 
-class MedicineTemplateView(TemplateView):
+class MedicineTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(MedicineTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Медицина/'
-        context['text'] = Medicine.objects.all()
-
-        return context
+    title = 'Беларусь Современная - Медицина'
+    path = '/Главная/Медицина/'
+    model_text = Medicine.objects.all()
 
 
-class IndustryTemplateView(TemplateView):
+class IndustryTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(IndustryTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Промышленность/'
-        context['text'] = Industry.objects.all()
-
-        return context
+    title = 'Беларусь Современная - Промышленность'
+    path = '/Главная/Промышленность/'
+    model_text = Industry.objects.all()
 
 
-class ConstructionTemplateView(TemplateView):
+class ConstructionTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ConstructionTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Строительство/'
-        context['text'] = Construction.objects.all()
-
-        return context
+    title = 'Беларусь Современная - Строительство'
+    path = '/Главная/Строительство/'
+    model_text = Construction.objects.all()
 
 
-class CarBuildingTemplateView(TemplateView):
+class CarBuildingTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(CarBuildingTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Машиностроение/'
-        context['text'] = CarBuilding.objects.all()
-
-        return context
+    title = 'Беларусь Современная - Промышленность(Машиностроение)'
+    path = '/Главная/Промышленность(Машиностроение)/'
+    model_text = Construction.objects.all()
 
 
-class AgricultureTemplateView(TemplateView):
+class AgricultureTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(AgricultureTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Сельское хозяйство/'
-        context['text'] = Agriculture.objects.all()
-
-        return context
+    title = 'Беларусь Современная - Сельское хозяйство'
+    path = '/Главная/Сельское хозяйство/'
+    model_text = Agriculture.objects.all()
 
 
-class ForestryTemplateView(TemplateView):
+class ForestryTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ForestryTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Лесное хозяйство/'
-        context['text'] = Forestry.objects.all()
-
-        return context
+    title = 'Беларусь Современная - Лесное хозяйство'
+    path = '/Главная/Лесное хозяйство/'
+    model_text = Forestry.objects.all()
 
 
-class ITTemplateView(TemplateView):
+class ITTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ITTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/IT(Информационные технологии)/'
-        context['text'] = IT.objects.all()
-
-        return context
+    title = 'Беларусь Современная - IT(Информационные технологии)'
+    path = '/Главная/IT(Информационные технологии)/'
+    model_text = IT.objects.all()
 
 
-class CultureTemplateView(TemplateView):
+class CultureTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(CultureTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Культура/'
-        context['text'] = Culture.objects.all()
-
-        return context
+    title = 'Беларусь Современная - Культура'
+    path = '/Главная/Культура/'
+    model_text = Culture.objects.all()
 
 
-class ArchitectureTemplateView(TemplateView):
+class ArchitectureTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ArchitectureTemplateView, self).get_context_data()
-
-        context['path'] = '/Главная/Архитектура/'
-        context['text'] = Architecture.objects.all()
-
-        return context
-
+    title = 'Беларусь Современная - Архитектура'
+    path = '/Главная/Архитектура/'
+    model_text = Architecture.objects.all()
