@@ -29,3 +29,15 @@ class ModelMixin:
         context['text'] = self.model_text
 
         return context
+
+
+class ImageMixin:
+    image = None
+
+    def get_context_data(self, **kwargs):
+        queryset = super(ImageMixin, self).get_context_data(**kwargs)
+
+        queryset['image_background'] = self.image
+
+        return queryset
+

@@ -71,3 +71,11 @@ class Architecture(models.Model):
 
     def __str__(self):
         return f'{self.description}'
+
+
+class Images(models.Model):
+    image = models.ImageField(upload_to='images')
+    name = models.CharField(max_length=126)
+
+    def __str__(self):
+        return f'{self.name}'

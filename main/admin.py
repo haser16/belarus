@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from main.models import (IT, Agriculture, Architecture, CarBuilding,
-                         Construction, Culture, Forestry, Industry, Medicine)
+from main.models import *
 
 admin.site.register(Medicine)
 admin.site.register(Industry)
@@ -12,3 +11,4 @@ admin.site.register(Forestry)
 admin.site.register(IT)
 admin.site.register(Architecture)
 admin.site.register(Culture)
+admin.site.register(Images)

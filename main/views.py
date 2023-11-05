@@ -1,8 +1,7 @@
 from django.views.generic.base import TemplateView
 
-from common.views import ModelMixin, PathMixin, TitleMixin
-from main.models import (IT, Agriculture, Architecture, CarBuilding,
-                         Construction, Culture, Forestry, Industry, Medicine)
+from common.views import *
+from main.models import *
 
 
 class IndexTemplateView(TitleMixin, TemplateView):
@@ -10,64 +9,73 @@ class IndexTemplateView(TitleMixin, TemplateView):
     title = 'Беларусь Современная'
 
 
-class MedicineTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class MedicineTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Медицина'
     path = '/Главная/Медицина/'
     model_text = Medicine.objects.all()
+    image = Images.objects.get(name='Медицина')
 
 
-class IndustryTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class IndustryTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Промышленность'
     path = '/Главная/Промышленность/'
     model_text = Industry.objects.all()
+    image = Images.objects.get(name='Промышленность')
 
 
-class ConstructionTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class ConstructionTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Строительство'
     path = '/Главная/Строительство/'
     model_text = Construction.objects.all()
+    image = Images.objects.get(name='Строительство')
 
 
-class CarBuildingTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class CarBuildingTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Промышленность(Машиностроение)'
     path = '/Главная/Промышленность(Машиностроение)/'
     model_text = Construction.objects.all()
+    image = Images.objects.get(name='Машиностроение')
 
 
-class AgricultureTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class AgricultureTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Сельское хозяйство'
     path = '/Главная/Сельское хозяйство/'
     model_text = Agriculture.objects.all()
+    image = Images.objects.get(name='Сельское хозяйство')
 
 
-class ForestryTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class ForestryTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Лесное хозяйство'
     path = '/Главная/Лесное хозяйство/'
     model_text = Forestry.objects.all()
+    image = Images.objects.get(name='Лесное хозяйство')
 
 
-class ITTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class ITTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - IT(Информационные технологии)'
     path = '/Главная/IT(Информационные технологии)/'
     model_text = IT.objects.all()
+    image = Images.objects.get(name='IT')
 
 
-class CultureTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class CultureTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Культура'
     path = '/Главная/Культура/'
     model_text = Culture.objects.all()
+    image = Images.objects.get(name='Культура')
 
 
-class ArchitectureTemplateView(TitleMixin, PathMixin, ModelMixin, TemplateView):
+class ArchitectureTemplateView(ImageMixin, TitleMixin, PathMixin, ModelMixin, TemplateView):
     template_name = 'main/category.html'
     title = 'Беларусь Современная - Архитектура'
     path = '/Главная/Архитектура/'
     model_text = Architecture.objects.all()
+    image = Images.objects.get(name='Архитектура')
