@@ -39,11 +39,11 @@ body {
     display: flex;
     justify-content: space-around;
 }
-.item{
+.item-index{
     padding-right: 10px;
     transition: color .2s linear;
 }
-.item:hover{
+.item-index:hover{
     color: rgb(37, 37, 60);
 }
 
@@ -191,6 +191,7 @@ body {
 .footer{
     margin-top: 50px;
     margin-bottom: 30px;
+    background-color:white;e
 }
 .footer__img{
     width: 5rem;
@@ -233,6 +234,9 @@ body {
         transform: scale(1.05);
         color: white;
     }
+}
+a{
+    padding:10px;
 }
 @media screen and (max-width:1000px){
     .nav{

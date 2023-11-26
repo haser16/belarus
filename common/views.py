@@ -31,6 +31,17 @@ class ModelMixin:
         return context
 
 
+class IconMixin:
+    icons_elem = None
+
+    def get_context_data(self, **kwargs):
+        context = super(IconMixin, self).get_context_data(**kwargs)
+
+        context['elements'] = self.icons_elem
+
+        return context
+
+
 class ImageMixin:
     image = None
 
@@ -40,4 +51,3 @@ class ImageMixin:
         queryset['image_background'] = self.image
 
         return queryset
-
