@@ -1,4 +1,4 @@
-{% extends 'main/base.html'%}
+{% extends 'game/base.html'%}
 {% load static %}
 
 {% block 'content' %}
@@ -56,12 +56,12 @@
         </div>
     </section>
     <section class="images">
-        <img src="{% static 'img/economy.jpg' %}" alt="Front" class="img">
-        <img src="{% static 'img/back.jpg' %}" alt="Back" class="img">
+        <img src="{% static 'img/economy.png' %}" alt="Front" class="img">
+        <img src="{% static 'img/back.png' %}" alt="Back" class="img">
     </section>
     <section class="buttons">
-        <a href="{% static 'img/economy.jpg' %}" class="download-button" download>Скачать (Основную сторону)</a>
-        <a href="{% static 'img/back.jpg' %}" class="download-button" download>Скачать (Заднию сторону)</a>
+        <a href="{% static 'img/economy.png' %}" class="download-button" download>Скачать (Основную сторону)</a>
+        <a href="{% static 'img/back.png' %}" class="download-button" download>Скачать (Заднюю сторону)</a>
     </section>
 </body>
 {% endblock %}
