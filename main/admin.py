@@ -1,14 +1,21 @@
 from django.contrib import admin
 
-from main.models import *
+from main.models import Category, Content, Paragraphs
 
-admin.site.register(Medicine)
-admin.site.register(Industry)
-admin.site.register(Construction)
-admin.site.register(CarBuilding)
-admin.site.register(Agriculture)
-admin.site.register(Forestry)
-admin.site.register(IT)
-admin.site.register(Architecture)
-admin.site.register(Culture)
-admin.site.register(Images)
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    fields = (('description', 'image',),)
+
+
+class ParagraphsInline(admin.TabularInline):
+    fk_name = 'content'
+    model = Paragraphs
+
+
+@admin.register(Content)
+class ContentAdmin(admin.ModelAdmin):
+
+    fields = (('image', 'category'),)
+    inlines = [ParagraphsInline
+               ]

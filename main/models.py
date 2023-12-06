@@ -1,81 +1,27 @@
 from django.db import models
 
 
-class Medicine(models.Model):
+class Category(models.Model):
     description = models.TextField()
-    image = models.ImageField(upload_to='medicine')
+    image = models.ImageField(upload_to='category')
 
     def __str__(self):
         return f'{self.description}'
 
 
-class Industry(models.Model):
+class Content(models.Model):
+    image = models.ImageField(upload_to='image_content')
+    category = models.ForeignKey(to=Category, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f'{self.category}'
+
+
+class Paragraphs(models.Model):
     description = models.TextField()
-    image = models.ImageField(upload_to='medicine')
+    image = models.ImageField(upload_to='paragraphs')
+    content = models.ForeignKey(Content, on_delete=models.CASCADE, related_name='paragraphs')
 
     def __str__(self):
-        return f'{self.description}'
+        return f'{self.content}'
 
-
-class Construction(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='construction')
-
-    def __str__(self):
-        return f'{self.description}'
-
-
-class CarBuilding(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='carbuilding')
-
-    def __str__(self):
-        return f'{self.description}'
-
-
-class Agriculture(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='agriculture')
-
-    def __str__(self):
-        return f'{self.description}'
-
-
-class Forestry(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='forestry')
-
-    def __str__(self):
-        return f'{self.description}'
-
-
-class IT(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='it')
-
-    def __str__(self):
-        return f'{self.description}'
-
-
-class Culture(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='culture')
-
-    def __str__(self):
-        return f'{self.description}'
-
-
-class Architecture(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='architecture')
-
-    def __str__(self):
-        return f'{self.description}'
-
-
-class Images(models.Model):
-    image = models.ImageField(upload_to='images')
-    name = models.CharField(max_length=126)
-
-    def __str__(self):
-        return f'{self.name}'
