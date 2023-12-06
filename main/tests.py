@@ -178,4 +178,3 @@ class ArchitectureTestCase(TestCase):
         self.assertEqual(response.context_data['path'], '/Главная/Архитектура/')
         self.assertEqual(list(response.context_data['text']), list(text))
         self.assertTemplateUsed(response, 'main/category.html')
-
