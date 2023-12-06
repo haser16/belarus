@@ -2,11 +2,10 @@ from django.db import models
 
 
 class Category(models.Model):
-    description = models.TextField()
-    image = models.ImageField(upload_to='category')
+    name = models.CharField(max_length=126)
 
     def __str__(self):
-        return f'{self.description}'
+        return f'{self.name}'
 
 
 class Content(models.Model):

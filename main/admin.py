@@ -5,7 +5,7 @@ from main.models import Category, Content, Paragraphs
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    fields = (('description', 'image',),)
+    fields = ('name', )
 
 
 class ParagraphsInline(admin.TabularInline):
@@ -16,6 +16,6 @@ class ParagraphsInline(admin.TabularInline):
 @admin.register(Content)
 class ContentAdmin(admin.ModelAdmin):
 
-    fields = (('image', 'category'),)
-    inlines = [ParagraphsInline
-               ]
+    fields = (('image', 'category'), )
+    inlines = (ParagraphsInline,
+    )
